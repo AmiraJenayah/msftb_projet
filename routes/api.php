@@ -14,32 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+     
+    
 });
-
-Route::group(['middleware' => 'role:coach'], function() {
-    Route::get('/dashboard', function() {
-       return 'Welcome coach';
-    });
- });
-
-
-Route::post('login', 'ApiController@login');
-Route::post('register', 'ApiController@register');
-
-
-
+ 
+ 
+  
+    Route::post('login', 'ApiController@login');
+    Route::post('register', 'ApiController@register');  
 Route::group(['middleware' => 'auth.jwt'], function () {
+   
     Route::get('logout', 'ApiController@logout');
     //Route::resource('/Joueurs', 'JoueurController');
-
-
-
-
-
-
 });
+
+
 
 Route::get('joueurs', 'JoueurController@index')->name("tous_joueurs");
 Route::get('joueur/{id}', 'JoueurController@show')->name("joueur");

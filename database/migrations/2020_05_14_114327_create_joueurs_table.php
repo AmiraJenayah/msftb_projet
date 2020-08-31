@@ -19,7 +19,7 @@ class CreateJoueursTable extends Migration
             $table->string('last_name');
             $table->string('birthday');
             $table->string('birthplace');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->integer('num_tenue');
             $table->string('taille');
             $table->string('date_arrive');
@@ -27,16 +27,15 @@ class CreateJoueursTable extends Migration
             $table->string('mutation');
             $table->string('last_equipe');
             $table->string('meilleur_pied');
-
             $table->integer('adresse_id')->references('id')->on('adresses')->onDelete('cascade');
             $table->integer('contact_id')->references('id')->on('contacts')->onDelete('cascade');
             $table->string('num_license');
             $table->string('photo');
             $table->integer('number_anneJoué');
-            $table->boolean('malade_connu');
-            $table->text('malade');
-            $table->text('tratiement_suivre');
-           $table->integer('scolaire_id')->references('id')->on('scolaires')->onDelete('cascade');
+//$table->boolean('malade_connu');
+           // $table->text('malade');
+         //   $table->text('tratiement_suivre');
+         //  $table->integer('scolaire_id')->references('id')->on('scolaires')->onDelete('cascade');
 
 
 

@@ -33,17 +33,17 @@ class UserSeeder extends Seeder
         $user1->permissions()->attach($manageUsers);
 
 
-        $user2 = new User();
+     $user2 = new User();
         $user2->username = 'amira ';
         $user2->first_name ='amira';
         $user2->last_name ='jenayh';
         $user2->slug ='amiramira';
-        $user2->email = 'amirae@gmail.com';
+        $user2->email = 'amirajnh@gmail.com';
         $user2->adress_id='3';
         $user2->contact_id='4';
         $user2->password = bcrypt('secret');
         $user2->save();
         $user2->roles()->attach($entraineur);
-        $user2->permissions()->attach( $createTasks);
+        $user2->permissions()->attach( $createTasks); 
     }
 }

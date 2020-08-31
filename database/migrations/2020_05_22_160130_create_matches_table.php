@@ -20,7 +20,7 @@ class CreateMatchesTable extends Migration
        //     $table->string('tour');
             $table->string('joue_a');
            // $table->string('phase');
-           // $table->string('lieu');
+         //  $table->string('lieu');
            // $table->string('date_time');
             $table->integer('journee');
           //  $table->integer('schema_jeu');
@@ -28,7 +28,7 @@ class CreateMatchesTable extends Migration
             $table->string('arbitre');
             $table->integer('equipe_id');
           //  $table->integer('capitaine_id');
-           // $table->string('score');
+            $table->string('score');
           //  $table->integer('but_in');
           //  $table->integer('but_out');
           //  $table->string('status');

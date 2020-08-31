@@ -25,7 +25,7 @@ class AddSoftDeleteToBlesseurTable extends Migration
      */
     public function down()
     {
-        Schema::table('blesseur', function (Blueprint $table) {
+        Schema::table('blesseurs', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
     }
