@@ -16,7 +16,7 @@ class MatchController extends Controller
     {
         return Match::all();
     
-    	return response()->json($matchs);
+    return Response::json($matchs);
     }
 
 
@@ -31,9 +31,15 @@ class MatchController extends Controller
         /* $model_match = new Match();
         $match = $model_match->store_match($request);
         return $match; */
+        
         $match = Match::create($request->all());
         return response()->json(['message'=> 'match created', 
         'match' => $match]);
+        /* 
+        Product::create($request->all());
+        return redirect()->route('products.index')
+      ->with('success','Product created successfully.');
+     */
     }
 
     /**

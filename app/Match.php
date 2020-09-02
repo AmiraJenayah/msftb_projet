@@ -114,6 +114,10 @@ class Match extends Model
       //      $match->status = $request->status;
         //    $match->is_prolongation = $request->is_prolongation;
             $match->extra_time = $request->extra_time;
+             $match->user_id = $request->user_id;
+        $match->owner_id = $request->owner_id;
+            
+
             $match->save();
             return  response()->json([
                 $match,

@@ -75,7 +75,7 @@ Route::delete('blesseur/{id}', 'SuspendusController@destroy')->name("deleted_ble
 
 Route::get('matchs', 'MatchController@index')->name("matchs");
 Route::get('match/{id}', 'MatchController@show')->name("match");
-Route::post('match', 'MatchController@store')->name("create_match");
+Route::post('match', 'MatchController@store')->name("match");
 Route::put('match/{id}', 'MatchController@update')->name("update_match");
 Route::delete('match/{id}', 'MatchController@destroy')->name("deleted_match");
 
