@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSoftDeleteToMatchesTable extends Migration
+class AddSoftDeleteToMatchsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddSoftDeleteToMatchesTable extends Migration
      */
     public function up()
     {
-        Schema::table('matches', function (Blueprint $table) {
+        Schema::table('matchs', function (Blueprint $table) {
             $table->softDeletes();
         });
     }
@@ -25,7 +25,7 @@ class AddSoftDeleteToMatchesTable extends Migration
      */
     public function down()
     {
-        Schema::table('matches', function (Blueprint $table) {
+        Schema::table('matchs', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
     }

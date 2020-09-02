@@ -70,9 +70,11 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-
+/* 
         $model_contact = new Contact();
-        $contact = $model_contact->destory_contact($id);
+        $contact = $model_contact->destory_contact($id); */
+         $contact = contact::find($id);
+        $contact->delete();
         return $contact ;
 
     }

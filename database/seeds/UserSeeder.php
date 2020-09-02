@@ -19,8 +19,8 @@ class UserSeeder extends Seeder
         $createTasks = Permission::where('slug','create-tasks')->first();
         $manageUsers = Permission::where('slug','manage-users')->first();
 
-        $user1 = new User();
-        $user1->username = 'hassen ';
+      $user1 = new User();
+        $user1->name = 'hassen ';
         $user1->first_name ='abdelkader';
         $user1->last_name ='derbali';
         $user1->slug ='hassenderbali';
@@ -31,10 +31,12 @@ class UserSeeder extends Seeder
         $user1->save();
         $user1->roles()->attach($admin);
         $user1->permissions()->attach($manageUsers);
+         
+    
 
 
-     $user2 = new User();
-        $user2->username = 'amira ';
+    $user2 = new User();
+        $user2->name = 'amira ';
         $user2->first_name ='amira';
         $user2->last_name ='jenayh';
         $user2->slug ='amiramira';
@@ -44,6 +46,6 @@ class UserSeeder extends Seeder
         $user2->password = bcrypt('secret');
         $user2->save();
         $user2->roles()->attach($entraineur);
-        $user2->permissions()->attach( $createTasks); 
+        $user2->permissions()->attach( $createTasks);  
     }
 }

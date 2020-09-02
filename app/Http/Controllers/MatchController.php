@@ -74,7 +74,7 @@ class MatchController extends Controller
     public function destroy($id)
     {
         $model_match = new Match();
-        $match = $model_match->destroy_match($id);
-        return $match;
+        $match = $model_match->delete($id);
+        //return $match;
     }
 }

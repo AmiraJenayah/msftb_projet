@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Match extends Model
 {
     use SoftDeletes;
+
+        protected $table = 'matchs';
+
     //
+    protected $guarded = [];
+
 
     public function store_match( $request)
     {
