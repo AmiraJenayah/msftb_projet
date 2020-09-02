@@ -73,12 +73,10 @@ public function login(Request $request)
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
-
         if ($this->loginAfterSignUp) {
             return $this->login($request);
         }
-
-        return response()->json([
+         return response()->json([
             'success'   =>  true,
             'data'      =>  $user
         ], 200);
