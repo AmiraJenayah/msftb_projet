@@ -73,7 +73,7 @@ Route::post('blesseur', 'SuspendusController@store')->name("create_blesseur");
 Route::put('blesseur/{id}', 'SuspendusController@update')->name("update_blesseur");
 Route::delete('blesseur/{id}', 'SuspendusController@destroy')->name("deleted_blesseur");
 
-Route::get('matchs', 'MatchController@index')->name("matchs");
+Route::get('matches', 'MatchController@index')->name("matches");
 Route::get('match/{id}', 'MatchController@show')->name("match");
 Route::post('match', 'MatchController@store')->name("match");
 Route::put('match/{id}', 'MatchController@update')->name("update_match");
