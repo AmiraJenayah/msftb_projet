@@ -19,12 +19,12 @@ class JoueurController extends Controller
     /**
      * TaskController constructor.
      */
-    public function __construct()
+  /*   public function __construct()
     {
        // $this->user = JWTAuth::parseToken()->authenticate();
         $model_joueur =  new Joueur();
     }
-
+ */
 
     /**
      * Display a listing of the resource.

@@ -32,13 +32,6 @@ class CreateJoueursTable extends Migration
             $table->string('num_license');
             $table->string('photo');
             $table->integer('number_anneJoué');
-//$table->boolean('malade_connu');
-           // $table->text('malade');
-         //   $table->text('tratiement_suivre');
-         //  $table->integer('scolaire_id')->references('id')->on('scolaires')->onDelete('cascade');
-
-
-
             $table->timestamps();
         });
     }

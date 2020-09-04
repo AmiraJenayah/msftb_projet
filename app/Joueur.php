@@ -35,7 +35,8 @@ class Joueur extends Model
     }
 
     public function blesseurs(){
-        return $this->belongsToMany('App\Blesseur','joueur_blesseur','joueur_id','blesseur_id');
+     
+       return $this->belongsToMany('App\Blesseur','joueur_blesseur','joueur_id','blesseur_id');
     }
 
     public static function boot(){
@@ -86,20 +87,12 @@ class Joueur extends Model
        $joueur->mutation = $request->mutation;
        $joueur->last_equipe = $request->last_equipe;
        $joueur->meilleur_pied = $request->meilleur_pied;
-
        $joueur->adresse_id = $request->adresse_id;
        $joueur->contact_id = $request->contact_id;
-
-
        $joueur->num_license = $request->num_license;
        $joueur->photo = $request->photo;
-
-
        $joueur->number_anneJoué = $request->number_anneJoué;
-       $joueur->malade_connu = $request->malade_connu;
-       $joueur->malade = $request->malade;
-       $joueur->tratiement_suivre = $request->tratiement_suivre;
-       $joueur->scolaire_id = $request->scolaire_id;
+ 
 
         $joueur->save();
         return  response()->json([
@@ -124,21 +117,22 @@ class Joueur extends Model
             ], 400);
         }else{
 
-                $joueur->first_name = $request->first_name;
-                $joueur->last_name = $request->last_name;
-                $joueur->date_naissance = $request->date_naissance;
-                $joueur->taille = $request->taille;
-                $joueur->poids = $request->poids;
-                $joueur->meilleur_pied = $request->meilleur_pied;
-                $joueur->mutation = $request->mutation;
-                $joueur->adresse_id = $request->adresse_id;
-                $joueur->contact_id = $request->contact_id;
-                $joueur->email = $request->email;
-                $joueur->num_license = $request->num_license;
-                $joueur->photo = $request->photo;
-                $joueur->num_tenue = $request->num_tenue;
-                $joueur->date_arrive = $request->date_arrive;
-                $joueur->last_equipe = $request->last_equipe;
+        $joueur->first_name = $request->first_name;
+       $joueur->last_name = $request->last_name;
+       $joueur->birthday = $request->birthday;
+       $joueur->birthplace = $request->birthplace;
+       $joueur->email = $request->email;
+       $joueur->num_tenue = $request->num_tenue;
+       $joueur->taille = $request->taille;
+       $joueur->date_arrive = $request->date_arrive;
+       $joueur->poids = $request->poids;
+       $joueur->mutation = $request->mutation;
+       $joueur->last_equipe = $request->last_equipe;
+       $joueur->meilleur_pied = $request->meilleur_pied;
+       $joueur->adresse_id = $request->adresse_id;
+       $joueur->contact_id = $request->contact_id;
+       $joueur->num_license = $request->num_license;
+       $joueur->photo = $request->photo;
 
                 $joueur->save();
             return  response()->json([
@@ -174,8 +168,8 @@ class Joueur extends Model
                 'message' => 'Sorry, player with id ' . $id . ' cannot be found.'
             ], 400);
         }else{
-                $joueur->deleted =true;
-                $joueur->save();
+              //  $joueur->deleted =true;
+               // $joueur->save();
                 Joueur::destroy($id);
                 return response()->json(['
                 success' => true,

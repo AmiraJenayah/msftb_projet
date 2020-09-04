@@ -12,11 +12,14 @@ class MatchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        return Match::all();
+        /* return Match::all();
     
-    return Response::json($matchs);
+    return Response::json($matchs); */
+            return Match::all()->where ('deleted' , false);
+
     }
 
 
@@ -28,18 +31,14 @@ class MatchController extends Controller
      */
     public function store(Request $request)
     {
-        /* $model_match = new Match();
+         $model_match = new Match();
         $match = $model_match->store_match($request);
-        return $match; */
+        return $match; 
         
-        $match = Match::create($request->all());
+       /*  $match = Match::create($request->all());
         return response()->json(['message'=> 'match created', 
-        'match' => $match]);
-        /* 
-        Product::create($request->all());
-        return redirect()->route('products.index')
-      ->with('success','Product created successfully.');
-     */
+        'match' => $match]); */
+       
     }
 
     /**
@@ -63,11 +62,12 @@ class MatchController extends Controller
      * @param  \App\Match  $match
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  $id)
     {
         $model_match = new Match();
         $match = $model_match->update_match($request,$id);
         return $match;
+     
 
     }
 
@@ -80,7 +80,9 @@ class MatchController extends Controller
     public function destroy($id)
     {
         $model_match = new Match();
-        $match = $model_match->delete($id);
-        //return $match;
+        $match = $model_match->destroy_match($id);
+        return $match;
+        
+       
     }
 }

@@ -23,15 +23,15 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', 'ApiController@logout');
     
 
+
+    //Route::resource('/Joueurs', 'JoueurController');
+});
+
 Route::get('joueurs', 'JoueurController@index')->name("tous_joueurs");
 Route::get('joueur/{id}', 'JoueurController@show')->name("joueur");
 Route::post('joueur', 'JoueurController@store')->name("create_joueur");
 Route::put('joueur/{id}', 'JoueurController@update')->name("update_joueur");
 Route::delete('joueur/{id}', 'JoueurController@destroy')->name("deleted_joueur");
-
-    //Route::resource('/Joueurs', 'JoueurController');
-});
-
 
 
 Route::get('contacts', 'ContactController@index')->name("tous_contacts");

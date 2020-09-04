@@ -14,29 +14,20 @@ class CreateMatchsTable extends Migration
     public function up()
     {
         Schema::create('matchs', function (Blueprint $table) {
-            $table->id();
-            $table->integer('competitionID');
+        $table->id();
+            $table->integer('competitionId');
             $table->string('adversaire');
-       //     $table->string('tour');
             $table->string('joue_a');
-           // $table->string('phase');
-         //  $table->string('lieu');
-           // $table->string('date_time');
             $table->integer('journee');
-          //  $table->integer('schema_jeu');
             $table->string('terrain');
             $table->string('arbitre');
             $table->integer('equipe_id');
-          //  $table->integer('capitaine_id');
             $table->string('score');
-          //  $table->integer('but_in');
-          //  $table->integer('but_out');
-          //  $table->string('status');
-          ///  $table->Tinyinteger('is_prolongation');
             $table->integer('extra_time');
             $table->integer('user_id');
             $table->integer('owner_id');
             $table->timestamps();
+        
         });
     }
 
