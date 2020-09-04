@@ -13,30 +13,26 @@ class Match extends Model
 
 
     public function store_match( $request)
-    {
-      /*   $this->validate($request,[
-            'competitionId' => 'request',
-            'adversaire' => 'request',
-            'joue_a' => 'request',
-            'journee' => 'request',
-            'terrain' => 'request',
-            'arbitre' => 'request',
-            'equipe_id' => 'request',
-          'score' => 'request',
-            'extra_time' => 'request',
-            'user_id' => 'request',
-       ' owner_id' =>'request',
-        ]); */
+    {/* 
+            $request->validate([
+            'competitionId' => 'required',
+            'adversaire' => 'required',
+            'extra_time' => 'required',
+            'user_id' => 'required',
+       ' owner_id' =>'required',
+        ]);   */
         $match = new Match();
 
-        $match->competitionId=$request->competitionId;
+        $match->competitionId= $request->competitionId;
+                $match->competitionName= $request->competitionName;
+
         $match->adversaire = $request->adversaire;
         $match->joue_a = $request->joue_a;
         $match->journee = $request->journee;
         $match->terrain = $request->terrain;
         $match->arbitre = $request->arbitre;
         $match->equipe_id = $request->equipe_id;
-       $match->score  =$request->score;
+       $match->score  = $request->score;
         $match->extra_time = $request->extra_time;
         $match->user_id = $request->user_id;
         $match->owner_id = $request->owner_id;
@@ -61,10 +57,12 @@ class Match extends Model
         if(!$match){
             return response()->json([
                 'success' => false,
-                'message' => 'Sorry, player with id ' . $id . ' cannot be found.'
+                'message' => 'Sorry, match with id ' . $id . ' cannot be found.'
             ], 400);
         }else{
          $match->competitionId=$request->competitionId;
+                         $match->competitionName= $request->competitionName;
+
         $match->adversaire = $request->adversaire;
         $match->joue_a = $request->joue_a;
         $match->journee = $request->journee;

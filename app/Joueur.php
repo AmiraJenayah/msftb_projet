@@ -15,7 +15,7 @@ class Joueur extends Model
     	return $this->hasOne('App\Contact','id','contact_id');
     }
 
-    public function adresse()
+    public function adresses()
     {
     	return $this->hasMany('App\Adresses','id','adresse_id');
     }
@@ -78,21 +78,28 @@ class Joueur extends Model
        $joueur->first_name = $request->first_name;
        $joueur->last_name = $request->last_name;
        $joueur->birthday = $request->birthday;
+       
        $joueur->birthplace = $request->birthplace;
        $joueur->email = $request->email;
        $joueur->num_tenue = $request->num_tenue;
+       
        $joueur->taille = $request->taille;
        $joueur->date_arrive = $request->date_arrive;
        $joueur->poids = $request->poids;
+       
        $joueur->mutation = $request->mutation;
        $joueur->last_equipe = $request->last_equipe;
        $joueur->meilleur_pied = $request->meilleur_pied;
-       $joueur->adresse_id = $request->adresse_id;
-       $joueur->contact_id = $request->contact_id;
+       $joueur->post_player = $request->post_player;
+;          $joueur->number_anneJoue = $request->number_anneJoue;
+
+      
+     //  $joueur->adresse_id = $request->adresse_id;
+     //  $joueur->contact_id = $request->contact_id;
        $joueur->num_license = $request->num_license;
-       $joueur->photo = $request->photo;
-       $joueur->number_anneJoué = $request->number_anneJoué;
- 
+      
+   //    $joueur->photo = $request->photo;
+      
 
         $joueur->save();
         return  response()->json([
@@ -129,10 +136,15 @@ class Joueur extends Model
        $joueur->mutation = $request->mutation;
        $joueur->last_equipe = $request->last_equipe;
        $joueur->meilleur_pied = $request->meilleur_pied;
-       $joueur->adresse_id = $request->adresse_id;
-       $joueur->contact_id = $request->contact_id;
+     $joueur->post_player = $request->post_player;
+    
+          $joueur->number_anneJoue = $request->number_anneJoue;
+
+
+     //  $joueur->adresse_id = $request->adresse_id;
+      // $joueur->contact_id = $request->contact_id;
        $joueur->num_license = $request->num_license;
-       $joueur->photo = $request->photo;
+    //   $joueur->photo = $request->photo;
 
                 $joueur->save();
             return  response()->json([
