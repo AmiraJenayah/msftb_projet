@@ -10,36 +10,36 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Joueur extends Model
 {
     use SoftDeletes;
-    public function contact()
-    {
-    	return $this->hasOne('App\Contact','id','contact_id');
-    }
+    // public function contact()
+    // {
+    // 	return $this->hasOne('App\Contact','id','contact_id');
+    // }
 
-    public function adresses()
-    {
-    	return $this->hasMany('App\Adresses','id','adresse_id');
-    }
+    // public function adresses()
+    // {
+    // 	return $this->hasMany('App\Adresses','id','adresse_id');
+    // }
 
-    public function posts()
-    {
-        return $this->belongsToMany('App\Post','joueur_post','joueur_id','post_id');
-    }
+    // public function posts()
+    // {
+    //     return $this->belongsToMany('App\Post','joueur_post','joueur_id','post_id');
+    // }
 
-    public function performances()
-    {
-        return $this->belongsToMany('App\Performance','joueur_performance','joueur_id','performance_id')->select(['joueur_id','performance_id','value','name','slug']);
-    }
+    // public function performances()
+    // {
+    //     return $this->belongsToMany('App\Performance','joueur_performance','joueur_id','performance_id')->select(['joueur_id','performance_id','value','name','slug']);
+    // }
 
-    public function suspenduses(){
-        return $this->belongsToMany('App\Suspendus','joueur_suspenduses','joueur_id','suspension_id');
-    }
+    // public function suspenduses(){
+    //     return $this->belongsToMany('App\Suspendus','joueur_suspenduses','joueur_id','suspension_id');
+    // }
 
-    public function blesseurs(){
+    // public function blesseurs(){
      
-       return $this->belongsToMany('App\Blesseur','joueur_blesseur','joueur_id','blesseur_id');
-    }
+    //    return $this->belongsToMany('App\Blesseur','joueur_blesseur','joueur_id','blesseur_id');
+    // }
 
-    public static function boot(){
+    /* public static function boot(){
         parent::boot();
 
         static::deleting(function(Joueur $joueur){
@@ -50,7 +50,7 @@ class Joueur extends Model
             $joueur->suspenduses()->delete();
             $joueur->blesseurs()->delete();
         });
-    }
+    } */
 
     public function store_joueur($request) {
         /* $this->validate($request,[
@@ -91,14 +91,22 @@ class Joueur extends Model
        $joueur->last_equipe = $request->last_equipe;
        $joueur->meilleur_pied = $request->meilleur_pied;
        $joueur->post_player = $request->post_player;
-;          $joueur->number_anneJoue = $request->number_anneJoue;
+        $joueur->number_anneJoue = $request->number_anneJoue;
 
-      
-     //  $joueur->adresse_id = $request->adresse_id;
-     //  $joueur->contact_id = $request->contact_id;
-       $joueur->num_license = $request->num_license;
-      
-   //    $joueur->photo = $request->photo;
+       $joueur->num_license  = $request->num_license ;
+      $joueur->num_mobile  = $request->num_mobile;
+            $joueur->num_fixe  = $request->num_fixe;
+            $joueur->adresse  = $request->adresse;
+         $joueur->code_postal  = $request->code_postal;
+                $joueur->ville  = $request->ville;
+                 $joueur->pays  = $request->pays;
+                $joueur->speed  = $request->speed;
+            $joueur->endurance  = $request->endurance;
+             $joueur->tactical  = $request->tactical;
+            $joueur->technical  = $request->technical;
+               $joueur->attack  = $request->attack;
+              $joueur->defense  = $request->defense;
+
       
 
         $joueur->save();

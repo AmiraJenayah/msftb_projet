@@ -23,20 +23,17 @@ class Match extends Model
         ]);   */
         $match = new Match();
 
-        $match->competitionId= $request->competitionId;
-                $match->competitionName= $request->competitionName;
-
+      //  $match->competitionId= $request->competitionId;
+      $match->matchName= $request->matchName;
         $match->adversaire = $request->adversaire;
         $match->joue_a = $request->joue_a;
         $match->journee = $request->journee;
         $match->terrain = $request->terrain;
         $match->arbitre = $request->arbitre;
         $match->equipe_id = $request->equipe_id;
-       $match->score  = $request->score;
+      // $match->score  = $request->score;
         $match->extra_time = $request->extra_time;
-        $match->user_id = $request->user_id;
-        $match->owner_id = $request->owner_id;
-
+       
         $match->save();
         return  response()->json([
             $match,
@@ -54,25 +51,26 @@ class Match extends Model
     public function update_match($request, $id)
     {
         $match = Match::find($id);
-        if(!$match){
+       
+        
+          if (!$match) {
             return response()->json([
                 'success' => false,
                 'message' => 'Sorry, match with id ' . $id . ' cannot be found.'
             ], 400);
-        }else{
+        }
+        
+        else{
          $match->competitionId=$request->competitionId;
-                         $match->competitionName= $request->competitionName;
-
+       $match->competitionName= $request->competitionName;
         $match->adversaire = $request->adversaire;
         $match->joue_a = $request->joue_a;
         $match->journee = $request->journee;
         $match->terrain = $request->terrain;
         $match->arbitre = $request->arbitre;
         $match->equipe_id = $request->equipe_id;
-       $match->score  =$request->score;
+      // $match->score  =$request->score;
         $match->extra_time = $request->extra_time;
-        $match->user_id = $request->user_id;
-        $match->owner_id = $request->owner_id;
         
         $match->save();
 

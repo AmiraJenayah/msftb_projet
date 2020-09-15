@@ -19,7 +19,8 @@ class MatchController extends Controller
     
     return Response::json($matchs); */
             return Match::all()->where ('deleted' , false);
-
+	
+     	dd($jsonData);
     }
 
 

@@ -21,12 +21,11 @@ class UserSeeder extends Seeder
 
       $user1 = new User();
         $user1->name = 'hassen ';
-        $user1->first_name ='abdelkader';
-        $user1->last_name ='derbali';
-        $user1->slug ='hassenderbali';
+       // $user1->first_name ='abdelkader';
+      //  $user1->last_name ='derbali';
+       // $user1->slug ='hassenderbali';
         $user1->email = 'derbali@gmail.com';
-        $user1->adress_id='1';
-        $user1->contact_id='2';
+      
         $user1->password = bcrypt('secret');
         $user1->save();
         $user1->roles()->attach($admin);
@@ -37,12 +36,11 @@ class UserSeeder extends Seeder
 
     $user2 = new User();
         $user2->name = 'amira ';
-        $user2->first_name ='amira';
-        $user2->last_name ='jenayh';
-        $user2->slug ='amiramira';
+       // $user2->first_name ='amira';
+       // $user2->last_name ='jenayh';
+      //  $user2->slug ='amiramira';
         $user2->email = 'amirajnh@gmail.com';
-        $user2->adress_id='3';
-        $user2->contact_id='4';
+        
         $user2->password = bcrypt('secret');
         $user2->save();
         $user2->roles()->attach($entraineur);

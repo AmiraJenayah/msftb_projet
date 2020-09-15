@@ -27,14 +27,32 @@ class CreateJoueursTable extends Migration
             $table->string('mutation');
             $table->string('last_equipe');
             $table->string('meilleur_pied');
-            $table->string('post_player');
-      
-         $table->integer('adresse_id')->default(1)->constrained('adresses')->onDelete('cascade');
-      $table->integer('contact_id')->default(1)->constrained('contacts')->onDelete('cascade');
-         
+               
          $table->string('num_license');
            // $table->string('photo');
             $table->integer('number_anneJoue');
+            $table->string('post_player');
+
+             $table->string('num_mobile');
+            $table->string('num_fixe');
+
+             $table->text('adresse');
+            $table->string('code_postal');
+            $table->string('ville');
+            $table->string('pays');
+          $table->integer('speed');
+        $table->integer('endurance');
+             $table->integer('tactical');
+             $table->integer('technical');
+            $table->integer('attack');
+            $table->integer('defense');
+
+
+
+      
+        //     $table->integer('adresse_id')->default(1)->constrained('adresses')->onDelete('cascade');
+        // $table->integer('contact_id')->default(1)->constrained('contacts')->onDelete('cascade');
+         
             $table->timestamps();
         });
     }
@@ -47,8 +65,8 @@ class CreateJoueursTable extends Migration
     public function down()
     {
         Schema::dropIfExists('joueurs');
-        $table->dropForeign('joueurs_adresse_id_foreign');
+       /*  $table->dropForeign('joueurs_adresse_id_foreign');
                 $table->dropForeign('joueurs_contact_id_foreign');
-
+ */
     }
 }

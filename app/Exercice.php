@@ -11,44 +11,37 @@ class Exercice extends Model
 
     public function store_exercice( $request)
     {
-        $this->validate([
+      /*   $this->validate([
            ' name' =>'required',
             'temps' =>'required',
-            'partie_id' =>'required',
-            'exercice_theme_id' =>'required',
+            'exercice_theme' =>'required',
+            
+           
+            'nb_series' =>'required', 
             'difficulte' =>'required',
             'phase_jeu' =>'required',
-            'procede_id' =>'required',
-            'pedagogie_id' =>'required',
-            'intensite_id' =>'required',
-            'nb_series' =>'required',
             'repos_series' =>'required',
-            'recuperation_id' =>'required',
+           
             'objectif' =>'required',
             'consignes' =>'required',
             'realisation' =>'required',
-            'schema_url' =>'required',
 
-        ]);
+
+        ]); */
 
         $exercice = new Exercice();
 
-        $exercice->name = $request-> name;
-        $exercice->temps = $request-> temps;
-        $exercice-> partie_id = $request->partie_id ;
-        $exercice->exercice_theme_id = $request->exercice_theme_id ;
-        $exercice->difficulte = $request-> difficulte;
-        $exercice-> phase_jeu= $request->phase_jeu ;
-        $exercice->procede_id = $request->procede_id ;
-        $exercice-> pedagogie_id= $request-> pedagogie_id;
-        $exercice->intensite_id = $request->intensite_id ;
-        $exercice->nb_series = $request-> nb_series;
-        $exercice-> repos_series= $request->repos_series ;
-        $exercice->recuperation_id = $request->recuperation_id ;
+        $exercice->ExName = $request->ExName;
+        $exercice->temps = $request->temps;
+        $exercice->exercice_theme = $request->exercice_theme ;
+        $exercice->difficulte = $request->difficulte;
+        $exercice->phase_jeu= $request->phase_jeu ;
+        $exercice->nb_series = $request->nb_series;
+        $exercice->repos_series= $request->repos_series ;
         $exercice->objectif = $request->objectif ;
         $exercice->consignes = $request->consignes ;
         $exercice->realisation = $request->realisation ;
-        $exercice->schema_url = $request->schema_url ;
+   
 
         $exercice->save();
         return  response()->json([
@@ -80,23 +73,17 @@ class Exercice extends Model
                 'message' => 'Sorry, exercice with id ' . $id . ' cannot be found.'
             ], 400);
         }else{
-            $exercice->name = $request-> name;
-            $exercice->temps = $request-> temps;
-            $exercice-> partie_id = $request->partie_id ;
+            $exercice->ExName = $request->ExName;
+            $exercice->temps = $request->temps;
             $exercice->exercice_theme_id = $request->exercice_theme_id ;
-            $exercice->difficulte = $request-> difficulte;
-            $exercice-> phase_jeu= $request->phase_jeu ;
-            $exercice->procede_id = $request->procede_id ;
-            $exercice-> pedagogie_id= $request-> pedagogie_id;
-            $exercice->intensite_id = $request->intensite_id ;
-            $exercice->nb_series = $request-> nb_series;
-            $exercice-> repos_series= $request->repos_series ;
-            $exercice->recuperation_id = $request->recuperation_id ;
+            $exercice->difficulte = $request->difficulte;
+            $exercice->phase_jeu= $request->phase_jeu ;
+            $exercice->nb_series = $request->nb_series;
+            $exercice->repos_series= $request->repos_series ;
             $exercice->objectif = $request->objectif ;
             $exercice->consignes = $request->consignes ;
             $exercice->realisation = $request->realisation ;
-            $exercice->schema_url = $request->schema_url ;
-
+           
             $exercice->save();
             return  response()->json([
                 $exercice,
