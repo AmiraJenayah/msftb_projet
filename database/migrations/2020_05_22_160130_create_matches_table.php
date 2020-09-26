@@ -23,8 +23,11 @@ class CreateMatchesTable extends Migration
             $table->string('terrain');
          $table->string('arbitre');
             $table->integer('equipe_id');
-          //  $table->string('score');
+            $table->string('score');
             $table->integer('extra_time');
+                        $table->string('result');
+
+
             $table->timestamps();
         
         });

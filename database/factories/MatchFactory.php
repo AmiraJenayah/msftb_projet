@@ -15,8 +15,9 @@ $factory->define(Match::class, function (Faker $faker) {
         'terrain'=> $faker->word() ,
         'arbitre'=> $faker->word() ,
      'equipe_id'=>$faker->numberBetween($min = 1, $max = 100),
-       // 'score'=>$faker->numberBetween($min = 1, $max = 100),
+        'score'=>" ",
          'extra_time'=> $faker->numberBetween($min = 1, $max = 100) ,
+         'result' => " ",
        
     ];
 });

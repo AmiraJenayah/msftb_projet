@@ -25,15 +25,26 @@ class Match extends Model
 
       //  $match->competitionId= $request->competitionId;
       $match->matchName= $request->matchName;
-        $match->adversaire = $request->adversaire;
+        $match->adversaire =$request->adversaire;
         $match->joue_a = $request->joue_a;
         $match->journee = $request->journee;
         $match->terrain = $request->terrain;
         $match->arbitre = $request->arbitre;
-        $match->equipe_id = $request->equipe_id;
+        $match->equipe_id =$request->equipe_id;
       // $match->score  = $request->score;
         $match->extra_time = $request->extra_time;
-       
+
+             if($request ->score == ''){
+          $match->score = '';
+        }else{  
+            $match->score =$request->score;
+          }
+             if($request ->result == ''){
+          $match->result = '';
+        }else{  
+            $match->result =$request->result;
+          }
+          
         $match->save();
         return  response()->json([
             $match,
@@ -71,6 +82,13 @@ class Match extends Model
         $match->equipe_id = $request->equipe_id;
       // $match->score  =$request->score;
         $match->extra_time = $request->extra_time;
+
+        if($request ->result == ""){
+          $match->result = "";
+        }else{  
+            $match->result = $request->result;
+}
+                    
         
         $match->save();
 

@@ -132,27 +132,38 @@ class Joueur extends Model
             ], 400);
         }else{
 
-        $joueur->first_name = $request->first_name;
+       $joueur->first_name = $request->first_name;
        $joueur->last_name = $request->last_name;
        $joueur->birthday = $request->birthday;
+       
        $joueur->birthplace = $request->birthplace;
        $joueur->email = $request->email;
        $joueur->num_tenue = $request->num_tenue;
+       
        $joueur->taille = $request->taille;
        $joueur->date_arrive = $request->date_arrive;
        $joueur->poids = $request->poids;
+       
        $joueur->mutation = $request->mutation;
        $joueur->last_equipe = $request->last_equipe;
        $joueur->meilleur_pied = $request->meilleur_pied;
-     $joueur->post_player = $request->post_player;
-    
-          $joueur->number_anneJoue = $request->number_anneJoue;
+       $joueur->post_player = $request->post_player;
+        $joueur->number_anneJoue = $request->number_anneJoue;
 
+       $joueur->num_license  = $request->num_license ;
+      $joueur->num_mobile  = $request->num_mobile;
+            $joueur->num_fixe  = $request->num_fixe;
+            $joueur->adresse  = $request->adresse;
+         $joueur->code_postal  = $request->code_postal;
+                $joueur->ville  = $request->ville;
+                 $joueur->pays  = $request->pays;
+                $joueur->speed  = $request->speed;
+            $joueur->endurance  = $request->endurance;
+             $joueur->tactical  = $request->tactical;
+            $joueur->technical  = $request->technical;
+               $joueur->attack  = $request->attack;
+              $joueur->defense  = $request->defense;
 
-     //  $joueur->adresse_id = $request->adresse_id;
-      // $joueur->contact_id = $request->contact_id;
-       $joueur->num_license = $request->num_license;
-    //   $joueur->photo = $request->photo;
 
                 $joueur->save();
             return  response()->json([
