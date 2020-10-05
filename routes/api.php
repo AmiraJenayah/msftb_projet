@@ -40,6 +40,12 @@ Route::post('comp', 'CompetitionController@store')->name("create_comp");
 Route::put('comp/{id}', 'CompetitionController@update')->name("update_comp");
 Route::delete('comp/{id}', 'CompetitionController@destroy')->name("deleted_comp");
 
+Route::get('entrainements', 'EntrainementController@index')->name("tous_Entrainement");
+Route::get('entrainement/{id}', 'EntrainementController@show')->name("Entrainement");
+Route::post('entrainement', 'EntrainementController@store')->name("create_Entrainement");
+Route::put('entrainement/{id}', 'EntrainementController@update')->name("update_Entrainement");
+Route::delete('entrainement/{id}', 'EntrainementController@destroy')->name("deleted_Entrainement");
+
 
 
 
