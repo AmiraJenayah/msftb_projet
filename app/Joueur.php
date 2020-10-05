@@ -53,25 +53,7 @@ class Joueur extends Model
     } */
 
     public function store_joueur($request) {
-        /* $this->validate($request,[
-            'firstname' => 'required',
-            'lastname'  => 'required',
-            'brithday' => 'required',
-            'brithplace' => 'required',
-            'taille'  => 'required',
-            'poids'   => 'required',
-            'meilleur_pied' => 'required',
-            'mutation' => 'required',
-            'adresse_id' => 'required',
-            'contact_id' => 'required',
-            'email' => 'required',
-            'num_license' => 'required',
-            'photo' => 'required',
-            'num_tenue' => 'required',
-            'date_arrive' => 'required',
-            'last_equipe' => 'required',
-
-        ]);*/
+      
 
        $joueur = new Joueur();
 
@@ -106,9 +88,9 @@ class Joueur extends Model
             $joueur->technical  = $request->technical;
                $joueur->attack  = $request->attack;
               $joueur->defense  = $request->defense;
-
-      
-
+                 $joueur->salaire  = $request->salaire;
+                    $joueur->prime  = $request->prime;
+                       $joueur->contrat  = $request->contrat;
         $joueur->save();
         return  response()->json([
             $joueur,
@@ -131,28 +113,25 @@ class Joueur extends Model
                 'message' => 'Sorry, player with id ' . $id . ' cannot be found.'
             ], 400);
         }else{
+            
 
-       $joueur->first_name = $request->first_name;
+     $joueur->first_name = $request->first_name;
        $joueur->last_name = $request->last_name;
        $joueur->birthday = $request->birthday;
-       
        $joueur->birthplace = $request->birthplace;
        $joueur->email = $request->email;
        $joueur->num_tenue = $request->num_tenue;
-       
        $joueur->taille = $request->taille;
        $joueur->date_arrive = $request->date_arrive;
        $joueur->poids = $request->poids;
-       
        $joueur->mutation = $request->mutation;
        $joueur->last_equipe = $request->last_equipe;
        $joueur->meilleur_pied = $request->meilleur_pied;
        $joueur->post_player = $request->post_player;
         $joueur->number_anneJoue = $request->number_anneJoue;
-
        $joueur->num_license  = $request->num_license ;
       $joueur->num_mobile  = $request->num_mobile;
-            $joueur->num_fixe  = $request->num_fixe;
+         $joueur->num_fixe  = $request->num_fixe;
             $joueur->adresse  = $request->adresse;
          $joueur->code_postal  = $request->code_postal;
                 $joueur->ville  = $request->ville;
@@ -163,9 +142,10 @@ class Joueur extends Model
             $joueur->technical  = $request->technical;
                $joueur->attack  = $request->attack;
               $joueur->defense  = $request->defense;
-
-
-                $joueur->save();
+                 $joueur->salaire  = $request->salaire;
+                    $joueur->prime  = $request->prime;
+                       $joueur->contrat  = $request->contrat;
+            $joueur->save();
             return  response()->json([
                 $joueur,
                'success' => true,

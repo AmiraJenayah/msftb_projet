@@ -8,19 +8,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Match extends Model
 { 
     use SoftDeletes;
+     public function competition()
+     {
+     	return $this->hasMany('App\Competitions','id','match_id');
+    }
 
         
 
 
     public function store_match( $request)
-    {/* 
-            $request->validate([
-            'competitionId' => 'required',
-            'adversaire' => 'required',
-            'extra_time' => 'required',
-            'user_id' => 'required',
-       ' owner_id' =>'required',
-        ]);   */
+    {
         $match = new Match();
 
       //  $match->competitionId= $request->competitionId;

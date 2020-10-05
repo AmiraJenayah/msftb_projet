@@ -9,26 +9,35 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Competition extends Model
 {
     use SoftDeletes;
+    public function match()
+     {
+     	return $this->hasMany('App\Match','id','match_id');
+    }
+ public static function boot(){
+        parent::boot();
+
+        static::deleting(function(Competition $comp){
+            $comp->match()->delete();
+        
+        });
+    } 
 
     public function store_competition( $request)
     {
-        $this->validate([
-            'name' =>'required',
-            'comp_type_id' =>'required',
-            'niveau_id' =>'required',
-            'saison_id' => 'required',
-            'section_id' => 'required',
-            'nbre_journee' => 'required',
-            'categorie_id' => 'required',
-        ]);
+       
 
+        
         $comp = new Competition();
-        $comp->name = $request->name;
-        $comp->comp_type_id = $request->comp_type_id;
-        $comp->niveau_id = $request->niveau_id;
-        $comp->saison_id = $request->saison_id;
+        $comp->Compname = $request->Compname;
+       
         $comp->nbre_journee = $request->nbre_journee;
-        $comp->categorie = $request->categorie;
+        $comp->pays = $request->pays;
+
+             if($request ->match_id == ""){
+          $comp->match_id = "";
+        }else{  
+            $comp->match_id = $request->match_id;
+        }
         $comp->save();
         return response()->json([
             'succes' => true,
@@ -64,12 +73,11 @@ class Competition extends Model
                 'message' => ' competition with id '.$id. 'not found'
                 ],400);
         }
-        $comp->name = $request->name;
-        $comp->comp_type_id = $request->comp_type_id;
-        $comp->niveau_id = $request->niveau_id;
-        $comp->saison_id = $request->saison_id;
+        $comp->Compname = $request->Compname;
+       
         $comp->nbre_journee = $request->nbre_journee;
-        $comp->categorie = $request->categorie;
+        $comp->pays = $request->pays;
+      //  $comp->match_id = $request->match_id;
         $comp->save();
         return response()->json([
             'succes' => true,

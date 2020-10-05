@@ -15,13 +15,12 @@ class CreateCompetitionsTable extends Migration
     {
         Schema::create('competitions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('comp_type_id');
-            $table->integer('niveau_id');
-            $table->integer('saison_id');
-            $table->integer('section_id');
+            $table->string('Compname');
             $table->integer('nbre_journee');
-            $table->integer('categorie_id');
+            $table->string('pays');
+        
+                     $table->string('match_id')->default(1)->constrained('matches')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -34,5 +33,7 @@ class CreateCompetitionsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('competitions');
+     
+
     }
 }

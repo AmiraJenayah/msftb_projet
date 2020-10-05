@@ -25,7 +25,7 @@ class CreateMatchesTable extends Migration
             $table->integer('equipe_id');
             $table->string('score');
             $table->integer('extra_time');
-                        $table->string('result');
+            $table->string('result');
 
 
             $table->timestamps();

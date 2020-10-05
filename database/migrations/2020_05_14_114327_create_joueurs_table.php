@@ -26,30 +26,28 @@ class CreateJoueursTable extends Migration
             $table->string('poids');
             $table->string('mutation');
             $table->string('last_equipe');
-            $table->string('meilleur_pied');
-               
+            $table->string('meilleur_pied');     
          $table->string('num_license');
-           // $table->string('photo');
             $table->integer('number_anneJoue');
             $table->string('post_player');
-
              $table->string('num_mobile');
             $table->string('num_fixe');
-
              $table->text('adresse');
             $table->string('code_postal');
             $table->string('ville');
             $table->string('pays');
           $table->integer('speed');
-        $table->integer('endurance');
+           $table->integer('endurance');
              $table->integer('tactical');
              $table->integer('technical');
             $table->integer('attack');
             $table->integer('defense');
+            $table->integer('salaire');
+            $table->integer('prime');
+           $table->string('contrat');
 
 
-
-      
+            
         //     $table->integer('adresse_id')->default(1)->constrained('adresses')->onDelete('cascade');
         // $table->integer('contact_id')->default(1)->constrained('contacts')->onDelete('cascade');
          

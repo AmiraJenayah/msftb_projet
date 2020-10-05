@@ -34,6 +34,15 @@ Route::put('joueur/{id}', 'JoueurController@update')->name("update_joueur");
 Route::delete('joueur/{id}', 'JoueurController@destroy')->name("deleted_joueur");
 
 
+Route::get('comp', 'CompetitionController@index')->name("tous_comp");
+Route::get('comp/{id}', 'CompetitionController@show')->name("comp");
+Route::post('comp', 'CompetitionController@store')->name("create_comp");
+Route::put('comp/{id}', 'CompetitionController@update')->name("update_comp");
+Route::delete('comp/{id}', 'CompetitionController@destroy')->name("deleted_comp");
+
+
+
+
 Route::get('contacts', 'ContactController@index')->name("tous_contacts");
 Route::get('contact/{id}', 'ContactController@show')->name("contact");
 Route::post('contact', 'ContactController@store')->name("create_contact");
