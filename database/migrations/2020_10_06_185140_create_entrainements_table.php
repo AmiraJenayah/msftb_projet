@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEntrainementTable extends Migration
+class CreateEntrainementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,17 @@ class CreateEntrainementTable extends Migration
     {
         Schema::create('entrainements', function (Blueprint $table) {
             $table->id();
-               $table->string('EntrName');
-            $table->integer('matchNumber');
-            $table->integer('joueurNumber');
+                           $table->string('EntName'); 
+
+               $table->string('Period'); 
+               
+               $table->string('Lieu'); 
+                 $table->string('Horaire');
+                                  $table->integer('Nb_exercice');
 
             $table->timestamps();
+
+         
         });
     }
 

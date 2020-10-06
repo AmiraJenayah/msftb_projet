@@ -18,33 +18,35 @@ class CreateJoueursTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->date('birthday');
-            $table->string('birthplace');
             $table->string('email');
-            $table->integer('num_tenue');
-            $table->string('taille');
-            $table->date('date_arrive');
-            $table->string('poids');
-            $table->string('mutation');
-            $table->string('last_equipe');
-            $table->string('meilleur_pied');     
-         $table->string('num_license');
-            $table->integer('number_anneJoue');
-            $table->string('post_player');
-             $table->string('num_mobile');
-            $table->string('num_fixe');
-             $table->text('adresse');
-            $table->string('code_postal');
-            $table->string('ville');
-            $table->string('pays');
-          $table->integer('speed');
-           $table->integer('endurance');
-             $table->integer('tactical');
-             $table->integer('technical');
-            $table->integer('attack');
-            $table->integer('defense');
-            $table->integer('salaire');
-            $table->integer('prime');
-           $table->string('contrat');
+            $table->integer('numero_tenue');
+             $table->string('hauteur');
+              $table->string('poids');
+             $table->string('etatdeSante');
+               $table->integer('salaire');
+         $table->integer('primes');
+             
+                     //      $table->date('date_arrive');
+
+       //       $table->string('last_equipe');
+       //       $table->string('meilleur_pied');     
+      //     $table->string('num_license');
+        //      $table->integer('number_anneJoue');
+         //  //     $table->string('post_player');
+         //      $table->string('num_mobile');
+         //     $table->string('num_fixe');
+          //     $table->text('adresse');
+            //  $table->string('code_postal');
+             // $table->string('ville');
+            //  $table->string('pays');
+         //   $table->integer('speed');
+         //    $table->integer('endurance');
+         //      $table->integer('tactical');
+             //$table->integer('technical');
+            //$table->integer('attack');
+            //$table->integer('defense');
+          
+         //  $table->string('contrat');
 
 
             

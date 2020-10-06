@@ -28,16 +28,13 @@ class Competition extends Model
 
         
         $comp = new Competition();
-        $comp->Compname = $request->Compname;
-       
-        $comp->nbre_journee = $request->nbre_journee;
-        $comp->pays = $request->pays;
+         $comp->Compname = $request->Compname;
 
-             if($request ->match_id == ""){
-          $comp->match_id = "";
-        }else{  
-            $comp->match_id = $request->match_id;
-        }
+        $comp->Saison = $request->Saison;
+        $comp->Prix = $request->Prix;
+                $comp->Number_equipe = $request->Number_equipe;
+
+
         $comp->save();
         return response()->json([
             'succes' => true,
@@ -74,10 +71,14 @@ class Competition extends Model
                 ],400);
         }
         $comp->Compname = $request->Compname;
-       
-        $comp->nbre_journee = $request->nbre_journee;
-        $comp->pays = $request->pays;
-      //  $comp->match_id = $request->match_id;
+
+        $comp->Saison = $request->Saison;
+        $comp->Prix = $request->Prix;
+                $comp->Number_equipe = $request->Number_equipe;
+
+
+
+
         $comp->save();
         return response()->json([
             'succes' => true,

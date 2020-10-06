@@ -32,15 +32,11 @@ class Exercice extends Model
         $exercice = new Exercice();
 
         $exercice->ExName = $request->ExName;
-        $exercice->temps = $request->temps;
-        $exercice->exercice_theme = $request->exercice_theme ;
-        $exercice->difficulte = $request->difficulte;
-        $exercice->phase_jeu= $request->phase_jeu ;
-        $exercice->nb_series = $request->nb_series;
-        $exercice->repos_series= $request->repos_series ;
-        $exercice->objectif = $request->objectif ;
-        $exercice->consignes = $request->consignes ;
-        $exercice->realisation = $request->realisation ;
+      $exercice->type = $request->type;
+            $exercice->Duree = $request->Duree ;
+            $exercice->activite = $request->activite;
+           
+        
    
 
         $exercice->save();
@@ -74,16 +70,11 @@ class Exercice extends Model
             ], 400);
         }else{
             $exercice->ExName = $request->ExName;
-            $exercice->temps = $request->temps;
-            $exercice->exercice_theme_id = $request->exercice_theme_id ;
-            $exercice->difficulte = $request->difficulte;
-            $exercice->phase_jeu= $request->phase_jeu ;
-            $exercice->nb_series = $request->nb_series;
-            $exercice->repos_series= $request->repos_series ;
-            $exercice->objectif = $request->objectif ;
-            $exercice->consignes = $request->consignes ;
-            $exercice->realisation = $request->realisation ;
+            $exercice->type = $request->type;
+            $exercice->Duree = $request->Duree ;
+            $exercice->activite = $request->activite;
            
+        
             $exercice->save();
             return  response()->json([
                 $exercice,

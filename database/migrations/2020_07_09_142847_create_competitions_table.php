@@ -16,11 +16,9 @@ class CreateCompetitionsTable extends Migration
         Schema::create('competitions', function (Blueprint $table) {
             $table->id();
             $table->string('Compname');
-            $table->integer('nbre_journee');
-            $table->string('pays');
-        
-                     $table->string('match_id')->default(1)->constrained('matches')->onDelete('cascade');
-
+            $table->string('Saison');
+            $table->integer('Prix');
+       $table->integer('Number_equipe');
             $table->timestamps();
         });
     }

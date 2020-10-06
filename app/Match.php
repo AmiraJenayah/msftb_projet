@@ -20,27 +20,15 @@ class Match extends Model
     {
         $match = new Match();
 
-      //  $match->competitionId= $request->competitionId;
       $match->matchName= $request->matchName;
+          $match->date = $request->date;
         $match->adversaire =$request->adversaire;
-        $match->joue_a = $request->joue_a;
-        $match->journee = $request->journee;
-        $match->terrain = $request->terrain;
+        $match->tenue = $request->tenue;
+        $match->stade = $request->stade;
         $match->arbitre = $request->arbitre;
-        $match->equipe_id =$request->equipe_id;
-      // $match->score  = $request->score;
-        $match->extra_time = $request->extra_time;
-
-             if($request ->score == ''){
-          $match->score = '';
-        }else{  
-            $match->score =$request->score;
-          }
-             if($request ->result == ''){
-          $match->result = '';
-        }else{  
-            $match->result =$request->result;
-          }
+        $match->equipe =$request->equipe;
+    
+     
           
         $match->save();
         return  response()->json([
@@ -69,22 +57,15 @@ class Match extends Model
         }
         
         else{
-         $match->competitionId=$request->competitionId;
-       $match->competitionName= $request->competitionName;
-        $match->adversaire = $request->adversaire;
-        $match->joue_a = $request->joue_a;
-        $match->journee = $request->journee;
-        $match->terrain = $request->terrain;
+                $match->matchName= $request->matchName;
+    $match->date = $request->date;
+      $match->adversaire =$request->adversaire;
+        $match->tenue = $request->tenue;
+        $match->stade = $request->stade;
         $match->arbitre = $request->arbitre;
-        $match->equipe_id = $request->equipe_id;
-      // $match->score  =$request->score;
-        $match->extra_time = $request->extra_time;
-
-        if($request ->result == ""){
-          $match->result = "";
-        }else{  
-            $match->result = $request->result;
-}
+        $match->equipe =$request->equipe;
+    
+     
                     
         
         $match->save();

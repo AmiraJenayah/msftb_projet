@@ -7,17 +7,16 @@ use Faker\Generator as Faker;
 
 $factory->define(Match::class, function (Faker $faker) {
     return [
-       // 'competitionId'=> $faker->numberBetween($min = 1, $max = 200),
       'matchName'=> $faker->word() ,
+            'date'=> $faker->date($format = 'Y-m-d', $max = 'now') ,
+
         'adversaire'=> $faker->word() ,
-        'joue_a'=> $faker->word() ,
-        'journee' =>$faker->word(),
-        'terrain'=> $faker->word() ,
+        'tenue' =>$faker->word(),
+        'stade'=> $faker->word() ,
         'arbitre'=> $faker->word() ,
-     'equipe_id'=>$faker->numberBetween($min = 1, $max = 100),
-        'score'=>" ",
-         'extra_time'=> $faker->numberBetween($min = 1, $max = 100) ,
-         'result' => " ",
+     'equipe'=>$faker->word() ,
+       
+
        
     ];
 });

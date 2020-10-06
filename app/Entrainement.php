@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Entrainement extends Model
 {
-    use SoftDeletes;
+ //   use SoftDeletes;
    
 
 
@@ -16,9 +16,14 @@ class Entrainement extends Model
     {
 
         $entrainement = new Entrainement(); 
-        $entrainement->EntrName = $request->EntrName;
-        $entrainement->matchNumber = $request->matchNumber;
-        $entrainement->joueurNumber = $request->joueurNumber;
+        
+                $entrainement->EntName = $request->EntName;
+
+        $entrainement->Period = $request->Period;
+        $entrainement->Lieu = $request->Lieu;
+        $entrainement->Horaire = $request->Horaire;
+                $entrainement->Nb_exercice = $request->Nb_exercice;
+
 
         
         
@@ -57,10 +62,13 @@ class Entrainement extends Model
                 'message' => ' entrainement with id '.$id. 'not found'
                 ],400);
         }
-        $entrainement->EntrName = $request->EntrName;
        
-        $entrainement->nbre_journee = $request->nbre_journee;
-        $entrainement->pays = $request->pays;
+        $entrainement->Period = $request->Period;
+        $entrainement->Lieu = $request->Lieu;
+        $entrainement->Horaire = $request->Horaire;
+                $entrainement->Nb_exercice = $request->Nb_exercice;
+
+
      
         $entrainement->save();
         return response()->json([

@@ -17,15 +17,16 @@ class CreateMatchesTable extends Migration
              $table->id();
            
              $table->string('matchName');
+                         $table->date('date');
+
             $table->string('adversaire');
-            $table->string('joue_a');
-           $table->string('journee');
-            $table->string('terrain');
+            $table->string('stade');
+          
          $table->string('arbitre');
-            $table->integer('equipe_id');
-            $table->string('score');
-            $table->integer('extra_time');
-            $table->string('result');
+            $table->string('equipe');
+            $table->string('tenue');
+           // $table->integer('extra_time');
+           // $table->string('result');
 
 
             $table->timestamps();

@@ -16,15 +16,14 @@ class CreateExercicesTable extends Migration
         Schema::create('exercices', function (Blueprint $table) {
             $table->id();
             $table->string('ExName');
-            $table->integer('temps');
-            $table->string('exercice_theme');
-            $table->string('difficulte');
-            $table->integer('phase_jeu');
-            $table->integer('nb_series');
+            $table->string('type');
+            $table->time('Duree');
+            $table->string('activite');
+            /* $table->integer('nb_series');
             $table->integer('repos_series');
             $table->text('objectif');
             $table->text('consignes');
-            $table->text('realisation');
+            $table->text('realisation'); */
             $table->timestamps();
         });
     }
