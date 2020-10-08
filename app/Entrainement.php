@@ -11,7 +11,7 @@ class Entrainement extends Model
  //   use SoftDeletes;
    
 
-////////////////////////////////
+
     public function store_entrainement( $request)
     {
 
