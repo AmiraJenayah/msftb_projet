@@ -11,6 +11,6 @@ class CompetitionSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Competition::class,4)->create();
     }
 }

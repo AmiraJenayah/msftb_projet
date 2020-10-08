@@ -11,6 +11,6 @@ class EntrainementSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Entainement::class,100)->create();
+        factory(App\Entainement::class,5)->create();
     }
 }

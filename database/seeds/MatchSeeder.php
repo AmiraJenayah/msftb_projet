@@ -11,6 +11,6 @@ class MatchSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Match::class,10)->create();
+        factory(App\Match::class,3)->create();
     }
 }

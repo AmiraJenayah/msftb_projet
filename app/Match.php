@@ -57,7 +57,7 @@ class Match extends Model
         }
         
         else{
-                $match->matchName= $request->matchName;
+    $match->matchName= $request->matchName;
     $match->date = $request->date;
       $match->adversaire =$request->adversaire;
         $match->tenue = $request->tenue;
